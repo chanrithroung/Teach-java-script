@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/002/294/865/non_2x/saving-money-for-education-web-banner-design-open-book-with-light-and-piggy-bank-with-gold-coin-scholarship-student-loan-concept-header-or-footer-banner-free-vector.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="contain-btn">
+      <button class="button-19" onclick="addStudent()" role="button">
+        Add Student
+      </button>
+    </div>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>HTML</th>
+        <th>CSS</th>
+        <th>PHP</th>
+        <th>Bootstrap</th>
+        <th>Total</th>
+        <th>Average</th>
+        <th>Grade</th>
+      </tr>
+      <script>
+        let n = prompt("how many student you want to add?");
+        function findTotal(score1, score2, score3, score4) {
+          return score1 + score2 + score3 + score4;
+        }
+        function findAverage(total) {
+          return total / 4;
+        }
+        function findGrade(average) {
+          return average >= 95
+            ? "A"
+            : average >= 85
+            ? "B"
+            : average >= 75
+            ? "C"
+            : average >= 65
+            ? "D"
+            : average >= 50
+            ? "E"
+            : "F";
+        }
+        for (let i = 0; i < n; i++) {
+          let id = prompt("Enter your id");
+          let score1 = Number(prompt("enter your HTML score"));
+          let score2 = Number(prompt("enter your CSS score"));
+          let score3 = Number(prompt("enter your PHP score"));
+          let score4 = Number(prompt("enter your Boostratp score"));
+
+          let total = findTotal(score1, score2, score3, score4);
+          let average = findAverage(total);
+          let grade = findGrade(average);
+          document.write(
+            "<tr> <td>" +
+              id +
+              "</td> <td>" +
+              score1 +
+              "</td> <td>" +
+              score2 +
+              "</td> <td>" +
+              score3 +
+              "</td> <td>" +
+              score4 +
+              "</td> <td>"
+               + total+
+               "</td> <td>"
+               +average+
+               "</td> <td>"+grade+"</td></tr>"
+          );
+        }
+      </script>
+    </table>
+  </body>
+</html>
